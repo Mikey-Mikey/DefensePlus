@@ -1,6 +1,7 @@
 package net.mikey.defensemod;
 
 import com.mojang.logging.LogUtils;
+import net.mikey.defensemod.item.ModItems;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -19,6 +20,8 @@ public class DefenseMod
 
     public DefenseMod() {
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
+
+        ModItems.register(modEventBus);
 
         modEventBus.addListener(this::commonSetup);
 
